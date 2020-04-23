@@ -18,9 +18,13 @@ def register_env(name):
 
     return register_env_fn
 
+# # VGG: commented out to avoid mujoco license
+# # automatically import any envs in the envs/ directory
+# for file in os.listdir(os.path.dirname(__file__)):
+#     if file.endswith('.py') and not file.startswith('_'):
+#         module = file[:file.find('.py')]
+#         importlib.import_module('rlkit.envs.' + module)
 
-# automatically import any envs in the envs/ directory
-for file in os.listdir(os.path.dirname(__file__)):
-    if file.endswith('.py') and not file.startswith('_'):
-        module = file[:file.find('.py')]
-        importlib.import_module('rlkit.envs.' + module)
+# only import modules that do not depend on mujoco
+importlib.import_module('rlkit.envs.point_robot')
+

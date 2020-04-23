@@ -1,0 +1,8 @@
+
+create venv
+install wheel
+install requirements
+sudo apt install patchelf
+clone mujoco
+install source
+cp key and bashrc steps
